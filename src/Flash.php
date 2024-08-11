@@ -1,6 +1,6 @@
 <?php
 
-namespace Mrkatz\FlashMessage;
+namespace Mrkatz\FlashMessages;
 
 class Flash
 {

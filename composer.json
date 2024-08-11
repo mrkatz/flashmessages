@@ -1,5 +1,5 @@
 {
-    "name": "mrkatz/flashmessage",
+    "name": "mrkatz/flashmessages",
     "description": "Laravel package to handle flash messages using AlpineJS and Tailwind",
     "version": "1.0.0",
     "require": {
@@ -16,7 +16,7 @@
     "minimum-stability": "stable",
     "autoload": {
         "psr-4": {
-            "Mrkatz\\Flash\\": "src/"
+            "Mrkatz\\FlashMessages\\": "src/"
         },
         "files": [
             "src/Helpers/helper.php"
@@ -25,7 +25,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Mrkatz\\FlashMessage\\FlashMessageServiceProvider"
+                "Mrkatz\\FlashMessages\\FlashMessagesServiceProvider"
             ]
         }
     }

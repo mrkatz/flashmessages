@@ -1,10 +1,10 @@
 <?php
 
-namespace Mrkatz\FlashMessage;
+namespace Mrkatz\FlashMessages;
 
 use Illuminate\Support\ServiceProvider;
 
-class FlashMessageServiceProvider extends ServiceProvider
+class FlashMessagesServiceProvider extends ServiceProvider
 {
     public function register()
     {
@@ -35,7 +35,7 @@ class FlashMessageServiceProvider extends ServiceProvider
     protected function publishViews()
     {
         $this->publishes([
-            __DIR__ . '/../resources/views' => base_path('resources/views/vendor/flashmessage'),
+            __DIR__ . '/../resources/views' => base_path('resources/views/vendor/flashmessages'),
         ], 'flash:views');
     }
 }

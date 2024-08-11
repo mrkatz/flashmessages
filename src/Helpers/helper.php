@@ -1,6 +1,6 @@
 <?php
 
-use Mrkatz\FlashMessage\Flash;
+use Mrkatz\FlashMessages\Flash;
 
 if (!function_exists('flash')) {
     function flash($message = null, $type = 'info', $timeout = 5000)
