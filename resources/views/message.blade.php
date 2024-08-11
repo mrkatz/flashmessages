@@ -3,7 +3,7 @@
         @foreach (session('flash_notifications') as $notification)
             <div x-data="{ show: true }" x-init="@if ($notification['timeout'] > 0) setTimeout(() => show = false, {{ $notification['timeout'] }}); @endif" x-show="show"
                 class="p-4 border-t-2 rounded-lg bg-teal-50 dark:bg-teal-800/30" role="alert">
-                <div class="flex justify-between items-center">
+                <div class="flex items-center justify-between">
                     <div class="flex items-center">
 
                         @if ($notification['type'] === 'success')
@@ -61,7 +61,7 @@
                     </div>
 
                     <button @click="show = false"
-                        class="ms-3 text-gray-500 dark:text-gray-300 hover:text-gray-700 dark:hover:text-gray-100 focus:outline-none">
+                        class="text-gray-500 ms-3 dark:text-gray-300 hover:text-gray-700 dark:hover:text-gray-100 focus:outline-none">
                         <span class="sr-only">Dismiss</span>
                         &times;
                     </button>
@@ -71,3 +71,6 @@
         @endforeach
     @endif
 </div>
+@php
+    session()->forget('flash_notifications');
+@endphp

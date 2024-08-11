@@ -6,23 +6,16 @@ class Flash
 {
     protected $messages = [];
 
-    public function __construct()
-    {
-        // Load existing flash notifications if any
-        $this->messages = session()->get('flash_notifications', []);
-    }
-
     public function message($message, $type = 'info', $timeout = null)
     {
-        // Get default message and timeout from config if not provided
-        $defaultMessage = config("flash.type.$type.message", 'Default message');
-        $defaultTimeout = config("flash.type.$type.timeout", config('flash.timeout'));
+        if (session()->has('flash_notifications')) {
+            $this->messages = session()->pull('flash_notifications');
+        }
 
         $this->messages[] = [
             'type' => $type,
-            'message' => $message ?? $defaultMessage,
-            'timeout' => $timeout ?? $defaultTimeout,
-            'dismissible' => config('flash.dismissible', true),
+            'message' => $message ?? config("flash.type.$type.message", 'Default message'),
+            'timeout' => $timeout ?? config("flash.type.$type.timeout", config('flash.timeout'))
         ];
 
         session()->flash('flash_notifications', $this->messages);
