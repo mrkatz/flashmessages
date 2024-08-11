@@ -1,0 +1,32 @@
+{
+    "name": "mrkatz/flashmessage",
+    "description": "Laravel package to handle flash messages using AlpineJS and Tailwind",
+    "version": "1.0.0",
+    "require": {
+        "php": ">=7.3",
+        "illuminate/support": "^8.0|^9.0|^10.0|^11.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Adam Kaczocha",
+            "email": "adamkaczocha@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "Mrkatz\\Flash\\": "src/"
+        },
+        "files": [
+            "src/Helpers/helper.php"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Mrkatz\\FlashMessage\\FlashMessageServiceProvider"
+            ]
+        }
+    }
+}
