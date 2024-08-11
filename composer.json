@@ -1,7 +1,7 @@
 {
     "name": "mrkatz/flashmessages",
     "description": "Laravel package to handle flash messages using AlpineJS and Tailwind",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "require": {
         "php": ">=7.3",
         "illuminate/support": "^8.0|^9.0|^10.0|^11.0"
